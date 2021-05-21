@@ -1,4 +1,6 @@
-# Git and GitHub using SSH key
+# Git tutorial
+
+## Configure Git and GitHub using SSH key
 
 In this project, I'll explain how configure to connect my local machine with github account by SSH key. 
 First of all, I need to check for an existing ssh key by typing the following command:
@@ -31,3 +33,24 @@ After adding my private to the ssh-agent, I can now add my public key to github 
 $ clip < ~/.ssh/id_rsa.pub
 ```
 Then I can paste it by following the steps describe in this [tutorial](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+## Creating a new repository
+There are two ways to create a new repository.
+
+### From my local machine
+
+I follow the following steps:
+1. Create a new directory `mkdir my_repo`
+2. `cd my_repo` and `git init` 
+3. Create a README.md file `touch README.md`
+4. `echo # Git tutorial > README.md`
+5. Create a new repo on github with the same name without initializing README and gitignore files.
+6. Finally, add changes to the stage area, commit and push them on github
+```bash
+$ git status
+$ git add .
+$ git commit -m "Initial commit"
+$ git remote add origin git@github.com:username/my_repo.git
+$ git push --set-upstream origin master
+``` 
+### From Github
